@@ -12,12 +12,11 @@
             "name": "Apache 2.0",
             "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
         },
-        "x-logo":{
+        "x-logo": {
             "url": "zInspectorBanner.png",
-            "backgroundColor":"#FFFFFF",
-            "altText":"Logo"
-        
-        }    
+            "backgroundColor": "#FFFFFF",
+            "altText": "Logo"
+        }
     },
     "host": "propertytenant.swagger.io",
     "basePath": "/v2",
@@ -391,7 +390,7 @@
                             }
                         }
                     },
-                    "405":{
+                    "405": {
                         "description": "Some error"
                     }
                 },
@@ -426,17 +425,17 @@
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/lease"
+                                "$ref": "#/definitions/Lease"
                             }
                         }
                     }
                 ],
                 "responses": {
-                    "200":{
-                        "description":"success"
+                    "200": {
+                        "description": "success"
                     },
-                    "405":{
-                        "description":"error"
+                    "405": {
+                        "description": "error"
                     },
                     "default": {
                         "description": "successful operation"
@@ -468,16 +467,16 @@
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/lease"
+                                "$ref": "#/definitions/Lease"
                             }
                         }
                     }
                 ],
                 "responses": {
-                    "200":{
-                        "description":"successful operation"
+                    "200": {
+                        "description": "successful operation"
                     },
-                    "403":{
+                    "403": {
                         "description": "error"
                     },
                     "default": {
@@ -511,7 +510,7 @@
                     "200": {
                         "description": "successful operation",
                         "schema": {
-                            "$ref": "#/definitions/lease"
+                            "$ref": "#/definitions/Lease"
                         }
                     },
                     "400": {
@@ -550,7 +549,7 @@
                         "description": "Updated lease object",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/lease"
+                            "$ref": "#/definitions/Lease"
                         }
                     }
                 ],
@@ -561,8 +560,8 @@
                     "404": {
                         "description": "lease not found"
                     },
-                    "200":{
-                        "description":"successful operation"
+                    "200": {
+                        "description": "successful operation"
                     }
                 }
             },
@@ -593,8 +592,8 @@
                     "404": {
                         "description": "lease not found"
                     },
-                    "200":{
-                        "description":"successful operation"
+                    "200": {
+                        "description": "successful operation"
                     }
                 }
             }
@@ -669,8 +668,8 @@
                     "404": {
                         "description": "lease not found"
                     },
-                    "200":{
-                        "description":"successful operation"
+                    "200": {
+                        "description": "successful operation"
                     },
                     "default": {
                         "description": "successful operation"
@@ -700,7 +699,7 @@
                         "description": "Created lease object",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/lease"
+                            "$ref": "#/definitions/Lease"
                         }
                     }
                 ],
@@ -708,8 +707,8 @@
                     "404": {
                         "description": "lease not found"
                     },
-                    "200":{
-                        "description":"successful operation"
+                    "200": {
+                        "description": "successful operation"
                     },
                     "default": {
                         "description": "successful operation"
@@ -768,7 +767,9 @@
         "Property": {
             "type": "object",
             "required": [
-                "name"
+                "name",
+                "city",
+                "address"
             ],
             "properties": {
                 "id": {
@@ -781,24 +782,41 @@
                 },
                 "address": {
                     "type": "string",
-                    "example": "street 123"
+                    "example": "Paraisos"
                 },
                 "address2": {
                     "type": "string",
-                    "example": "apt 305"
+                    "example": "M70 S10"
                 },
-                "status": {
+                "city": {
+                    "type": "string",
+                    "example": "Ciudad de la Costa"
+                },
+                "state": {
+                    "type": "string",
+                    "example": "Canelones"
+                },
+                "country": {
+                    "type": "string",
+                    "example": "Uruguay"
+                },
+                "zip": {
+                    "type": "string",
+                    "example": "15005"
+                },
+                "vacancy": {
                     "type": "string",
                     "description": "property status in the tenant",
                     "enum": [
-                        "available",
-                        "pending",
-                        "sold"
+                        "",
+                        "Vacant",
+                        "Planned Vacancy",
+                        "Active"
                     ]
                 }
             },
             "xml": {
-                "name": "property"
+                "name": "Property"
             }
         },
         "Tag": {
@@ -823,68 +841,130 @@
                     "type": "integer",
                     "format": "int64"
                 },
-                "propertyId": {
-                    "type": "integer",
-                    "format": "int64"
-                },
-                "quantity": {
-                    "type": "integer",
-                    "format": "int32"
-                },
-                "shipDate": {
+                "company": {
                     "type": "string",
-                    "format": "date-time"
+                    "example": "zInspector"
                 },
-                "status": {
+                "firstName": {
                     "type": "string",
-                    "description": "Order Status",
+                    "example": "Gabriel"
+                },
+                "lastName": {
+                    "type": "string",
+                    "example": "Schinca"
+                },
+                "email": {
+                    "type": "string",
+                    "example": "gabriel@zinspector.com"
+                },
+                "country": {
+                    "type": "string",
+                    "example": "Uruguay"
+                },
+                "phone": {
+                    "type": "string",
+                    "example": "26983064"
+                },
+                "cellPhone": {
+                    "type": "string",
+                    "example": "098329838"
+                },
+                "address": {
+                    "type": "string",
+                    "example": "Paraisos M70 S10"
+                },
+                "city": {
+                    "type": "string",
+                    "example": "Ciudad de la Costa"
+                },
+                "state": {
+                    "type": "string",
+                    "example": "Canelones"
+                },
+                "zip": {
+                    "type": "string",
+                    "example": "15005"
+                },
+                "category": {
+                    "type": "string",
+                    "description": "Category",
                     "enum": [
-                        "placed",
-                        "approved",
-                        "delivered"
+                        "Tenant",
+                        "Applicant",
+                        "Co-Signer",
+                        "Lead",
+                        "Other",
+                        "Prospect"
                     ]
-                },
-                "complete": {
-                    "type": "boolean"
                 }
             },
             "xml": {
-                "name": "Order"
+                "name": "Tenant"
             }
         },
-        "lease": {
+        "Lease": {
             "type": "object",
             "properties": {
                 "id": {
                     "type": "integer",
                     "format": "int64"
                 },
-                "leasename": {
-                    "type": "string"
+                "property": {
+                    "$ref": "#/definitions/Property"
                 },
-                "firstName": {
-                    "type": "string"
-                },
-                "lastName": {
-                    "type": "string"
-                },
-                "email": {
-                    "type": "string"
-                },
-                "password": {
-                    "type": "string"
-                },
-                "phone": {
-                    "type": "string"
-                },
-                "leaseStatus": {
+                "rent": {
                     "type": "integer",
-                    "format": "int32",
-                    "description": "lease Status"
+                    "format": "int64"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "Lease Status",
+                    "enum": [
+                        "Listed",
+                        "Moving In",
+                        "Current",
+                        "Current - Renewal",
+                        "Moving Out",
+                        "Moved Out - SD Pending",
+                        "SD Returned",
+                        "Moving In - Roomate",
+                        "Moving Ouit - Roomate",
+                        "Moved Out - SD Pending - Roomate",
+                        "SD Returned - Roomate"
+                    ]
+                },
+                "sigStatus": {
+                    "type": "string",
+                    "description": "Lease Signature Status",
+                    "enum": [
+                        "No Signatures",
+                        "Own Notified of Lease/Renewal",
+                        "Lease/Renewal Sent",
+                        "Ten Sig - Partial",
+                        "Ten Sig - Complete",
+                        "Ten Comp - Sent to Owner",
+                        "Complete"
+                    ]
+                },
+                "leaseStart": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "leaseEnd": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "leaseMoveIn": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "leaseMoveOut": {
+                    "type": "string",
+                    "format": "date-time"
                 }
             },
             "xml": {
-                "name": "lease"
+                "name": "Lease"
             }
         }
     },
