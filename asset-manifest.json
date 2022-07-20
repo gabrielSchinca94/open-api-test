@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "https://gabrielschinca94.github.io/open-api-test/static/css/main.073c9b0a.css",
-    "main.js": "https://gabrielschinca94.github.io/open-api-test/static/js/main.89ec2ea8.js",
-    "static/js/787.9839fbf7.chunk.js": "https://gabrielschinca94.github.io/open-api-test/static/js/787.9839fbf7.chunk.js",
-    "static/media/index.cjs": "https://gabrielschinca94.github.io/open-api-test/static/media/index.86cca4a3e82de83e79be.cjs",
-    "index.html": "https://gabrielschinca94.github.io/open-api-test/index.html",
-    "main.073c9b0a.css.map": "https://gabrielschinca94.github.io/open-api-test/static/css/main.073c9b0a.css.map",
-    "main.89ec2ea8.js.map": "https://gabrielschinca94.github.io/open-api-test/static/js/main.89ec2ea8.js.map",
-    "787.9839fbf7.chunk.js.map": "https://gabrielschinca94.github.io/open-api-test/static/js/787.9839fbf7.chunk.js.map"
+    "main.css": "/static/css/main.073c9b0a.css",
+    "main.js": "/static/js/main.3246aa96.js",
+    "static/js/787.9839fbf7.chunk.js": "/static/js/787.9839fbf7.chunk.js",
+    "static/media/index.cjs": "/static/media/index.86cca4a3e82de83e79be.cjs",
+    "index.html": "/index.html",
+    "main.073c9b0a.css.map": "/static/css/main.073c9b0a.css.map",
+    "main.3246aa96.js.map": "/static/js/main.3246aa96.js.map",
+    "787.9839fbf7.chunk.js.map": "/static/js/787.9839fbf7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.89ec2ea8.js"
+    "static/js/main.3246aa96.js"
   ]
 }
